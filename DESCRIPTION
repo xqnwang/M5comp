@@ -1,0 +1,11 @@
+Package: M5comp
+Title: Data from the M5-Competition
+Version: 0.0.1
+Author: Xiaoqian Wang, Xixi Li, Yanfei Kang, Feng Li
+Maintainer: Xiaoqian Wang <xiaoqianwang@buaa.edu.cn>
+Description: The 42840 time series from the M5-competition.
+License: GPL-3
+Encoding: UTF-8
+Depends: R (>= 3.4.0)
+RoxygenNote: 6.1.1
+LazyData: true
