@@ -6,7 +6,8 @@
 \title{M5 Competition data}
 \format{M5 is a list of 42840 series, 
 including 30490 bottom-level time series and 12350 aggregated time series.
-Each series of bottom-level within \code{M5} is an object with the following structure:
+
+1. Each series of bottom-level within \code{M5} is an object with the following structure:
 \describe{
   \item{id}{The id of the product of the store. 
   For example "HOBBIES_1_001_CA_1" denotes the product "HOBBIES_1_001" in the store "CA_1".}
@@ -25,11 +26,15 @@ Each series of bottom-level within \code{M5} is an object with the following str
   \item{h}{The number of required forecasts.}
   \item{x}{An integer vector specifying the number of units sold at every day, 
   starting from 2011-01-29 (the training data).}
-  \item{x.price}{A daily price vector of the products for the given store in the training periods (from 2011-01-29).}
-  \item{xx.price}{A daily price vector of the products for the given store in the validation periods (from 2016-04-25).}
-  \item{xxx.price}{A daily price vector of the products for the given store in the testing periods (from 2016-05-23).}
+  \item{x.price}{A daily price vector of the products for the given store in the training periods (from 2011-01-29). 
+  \code{NA} means no price provided.}
+  \item{xx.price}{A daily price vector of the products for the given store in the validation periods (from 2016-04-25).
+  \code{NA} means no price provided.}
+  \item{xxx.price}{A daily price vector of the products for the given store in the testing periods (from 2016-05-23).
+  \code{NA} means no price provided.}
 }
-Each series of aggregated level within \code{M5} does not include \code{id} and price elements. 
+
+2. Each series of aggregated level within \code{M5} does not include \code{id} and price elements. 
 \code{item.id}, \code{dept.id}, \code{cat.id}, \code{store.id}, and \code{state.id} are included 
 if the aggregate series contains these information. Besides, Each series of aggregated level contains 
 the following element:
@@ -48,7 +53,7 @@ The time series from the M5 competition.
 Calendar information can be seen in \code{\link{calendar}}.
 }
 \note{
-The training data range from 2011-01-29 to 2016-04-24. 
+The training data ranges from 2011-01-29 to 2016-04-24. 
 Both validation and test datasets contain 28-day sales data. 
 The prices are constant at weekly basis. Besides, the \code{level} 
 information is introduced in 
