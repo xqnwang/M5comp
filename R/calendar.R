@@ -34,6 +34,7 @@
 #'
 #' @references
 #' \href{https://mofc.unic.ac.cy/m5-competition/}{M5 Competition Web}
+#' 
 #' \href{https://mk0mcompetitiont8ake.kinstacdn.com/wp-content/uploads/2020/02/M5-Competitors-Guide_Final-1.pdf}{M5 Competitors’ Guide}
 #'
 #' @source \href{https://www.kaggle.com/c/m5-forecasting-accuracy}{M5 Competition Dataset}

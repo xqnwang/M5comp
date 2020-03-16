@@ -29,7 +29,7 @@
 #'   Possible values are "CA", "TX", & "WI".}
 #'   \item{n}{The number of observations in the training time series.}
 #'   \item{h}{The number of required forecasts.}
-#'   \item{x}{An integer vector specifying the number of units sold at every day,
+#'   \item{x}{A time series specifying the number of units sold at every day,
 #'   starting from 2011-01-29 (the training data).}
 #'   \item{x.price}{The price of the product for the given week/store in the training periods (from 2011-01-29).
 #'   The price is provided per week (average across seven days). Note that
@@ -74,4 +74,12 @@
 #' M5_bottom <- Filter(function(l) l$level == 12, M5)
 #' #extract level 9 series
 #' M5_l9 <- Filter(function(l) l$level == 9, M5)
+#' #time series plot with date
+#' library(ggplot2)
+#' library(xts)
+#' library(magrittr)
+#' data(calendar)
+#' ts <- M5[[1]]
+#' xts(ts$x, order.by = calendar$date[1:ts$n]) %>% 
+#'    autoplot() + ggtitle("Time series plot") + xlab("Time")
 "M5"
