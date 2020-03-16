@@ -1,0 +1,118 @@
+---
+output: github_document
+---
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# M5comp
+M5 Competition Data
+
+## Installation
+
+You can install the package `M5comp` with:
+
+```{r gh-installation, eval = FALSE}
+devtools::install_github("xqnwang/M5comp")
+```
+
+## Aggregation 
+
+**Number of M5 series per aggregation level.**
+
+| Level id |                        Aggregation level                             | Number of series |
+|:--------:|:---------------------------------------------------------------------|-----------------:|
+|   **1**  | Unit sales of all products, aggregated for all stores/states         |                1 |
+|   **2**  | Unit sales of all products, aggregated for each State                |                3 |
+|   **3**  | Unit sales of all products, aggregated for each store                |               10 |
+|   **4**  | Unit sales of all products, aggregated for each category             |                3 |
+|   **5**  | Unit sales of all products, aggregated for each department           |                7 |
+|   **6**  | Unit sales of all products, aggregated for each State and category   |                9 |
+|   **7**  | Unit sales of all products, aggregated for each State and department |               21 |
+|   **8**  | Unit sales of all products, aggregated for each store and category   |               30 |
+|   **9**  | Unit sales of all products, aggregated for each store and department |               70 |
+|  **10**  | Unit sales of product x, aggregated for all stores/states            |             3049 |
+|  **11**  | Unit sales of product x, aggregated for each State                   |             9147 |
+|  **12**  | Unit sales of product x, aggregated for each store                   |            30490 |
+| **Total**| -                                                                    |            42840 |
+
+
+The following table shows more simply and clearly how the aggregated time series are generated. For example, series of level 11 are aggregated by series with the same `item.id` **and** `state.id`.
+
+| Level id | id | item.id | dept.id | cat.id | store.id | state.id |
+|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
+|(example) | (HOBBIES_1_001_CA_1) | (HOBBIES_1_001) | (HOBBIES_1) | (HOBBIES) | (CA_1) | (CA) |
+|**1**| | | | | | |
+|**2**| | | | | |$\checkmark$|
+|**3**| | | | |$\checkmark$| | 
+|**4**| | | |$\checkmark$| | | 
+|**5**| | |$\checkmark$| | | | 
+|**6**| | | |$\checkmark$| |$\checkmark$| 
+|**7**| | |$\checkmark$ | | |$\checkmark$ | 
+|**8**| | | |$\checkmark$ |$\checkmark$ | | 
+|**9**| | |$\checkmark$| |$\checkmark$| | 
+|**10**| |$\checkmark$| | | | | 
+|**11**| |$\checkmark$| | | |$\checkmark$| 
+|**12**|$\checkmark$ | | | | | | 
+
+## Example
+
+The package `M5comp` contains two datasets: `M5` and `calendar`.
+
+### M5
+
+The `M5` is a list of $42840$ series, including $30490$ bottom-level time series and $12350$ aggregated time series. Each element of this list is also a list with some components, like the time series of the training periods and the level id of the series. The components of the bottom-level series and the aggregated series are partially different.
+
+```{r}
+# extract bottom-level series (level 12)
+library(M5comp)
+data(M5)
+M5_bottom <- Filter(function(l) l$level == 12, M5)
+# the components of the bottom-level series
+names(M5_bottom[[1]])
+
+# extract extract level 9 series
+M5_l9 <- Filter(function(l) l$level == 9, M5)
+# the components of the aggregated series
+names(M5_l9[[1]])
+# which levels the series is aggregated on
+M5_l9[[1]]$agg.by
+```
+
+### calendar
+
+The calendar data contains information about the dates the products are sold. The `calendar` object is a dataframe with some components, such as date, weekday and event_name_1.
+
+```{r}
+# the structure of the calendar data
+data(calendar)
+str(calendar)
+```
+
+
+```{r, fig.width=6, fig.height=3.5}
+# plot one of the series with date
+library(ggplot2)
+library(xts)
+library(magrittr)
+ts <- M5[[1]]
+xts(ts$x, order.by = calendar$date[1:ts$n]) %>% 
+   autoplot() + ggtitle("Time series plot") + xlab("Time")
+```
+
+
+```{r}
+# help pages
+?M5
+?calendar
+```
+
+
+## License
+
+This package is free and open source software, licensed under GPL-3
