@@ -42,7 +42,7 @@ devtools::install_github("xqnwang/M5comp")
 | **Total**| -                                                                    |            42840 |
 
 
-**The following table shows more simply and clearly how the aggregated time series are generated. For example, series of level 11 are aggregated by series with the same `item.id` **and** `state.id`.**
+**The following table shows more simply and clearly how the aggregated time series are generated. For example, series of level 11 are aggregated by series with the same `item.id` and `state.id`.**
 
 | Level id | id | item.id | dept.id | cat.id | store.id | state.id |
 |:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|

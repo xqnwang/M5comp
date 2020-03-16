@@ -34,7 +34,7 @@ Aggregation
 |   **12**  | Unit sales of product x, aggregated for each store                   |             30490|
 | **Total** | -                                                                    |             42840|
 
-**The following table shows more simply and clearly how the aggregated time series are generated. For example, series of level 11 are aggregated by series with the same `item.id` **and\*\* `state.id`.\*\*
+**The following table shows more simply and clearly how the aggregated time series are generated. For example, series of level 11 are aggregated by series with the same `item.id` and `state.id`.**
 
 <table style="width:100%;">
 <colgroup>
