@@ -51,17 +51,20 @@
 #' @note The training data ranges from 2011-01-29 to 2016-04-24. 
 #' Both validation and test datasets contain 28-day sales data. 
 #' The prices are constant at weekly basis. Besides, the \code{level} 
-#' information is introduced in M5 Competitors’ Guide <https://mk0mcompetitiont8ake.kinstacdn.com/wp-content/uploads/2020/02/M5-Competitors-Guide_Final-1.pdf>.
+#' information is introduced in 
+#' \href{https://mk0mcompetitiont8ake.kinstacdn.com/wp-content/uploads/2020/02/M5-Competitors-Guide_Final-1.pdf}{M5 Competitors’ Guide}.
 #' 
 #' @seealso  [calendar()] for the M5 calendar information.
 #' 
 #' @keywords datasets
 #'
 #' @references
-#' M5 Competition Web <https://mofc.unic.ac.cy/m5-competition/>
-#' M5 Competitors’ Guide <https://mk0mcompetitiont8ake.kinstacdn.com/wp-content/uploads/2020/02/M5-Competitors-Guide_Final-1.pdfhttps://mk0mcompetitiont8ake.kinstacdn.com/wp-content/uploads/2020/02/M5-Competitors-Guide_Final-1.pdf>  
+#' \href{https://mofc.unic.ac.cy/m5-competition/}{M5 Competition Web}
 #' 
-#' @source M5 Competition Dataset <https://www.kaggle.com/c/m5-forecasting-accuracy>
+#' \href{https://mk0mcompetitiont8ake.kinstacdn.com/wp-content/uploads/2020/02/M5-Competitors-Guide_Final-1.pdf}{M5 Competitors’ Guide}
+#' 
+#' 
+#' @source \href{https://www.kaggle.com/c/m5-forecasting-accuracy}{M5 Competition Dataset}
 #'
 #' @examples
 #' data(M5)
