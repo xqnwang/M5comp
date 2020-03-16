@@ -259,15 +259,9 @@ str(calendar)
 # plot one of the series with date
 library(ggplot2)
 library(xts)
-#> Loading required package: zoo
-#> 
-#> Attaching package: 'zoo'
-#> The following objects are masked from 'package:base':
-#> 
-#>     as.Date, as.Date.numeric
 library(magrittr)
 xts(M5[[1]]$x, order.by = calendar$date[1:M5[[1]]$n]) %>% 
-   autoplot() + xlab("Time")
+   autoplot() + xlab("Time") + ylab("Sales")
 ```
 
 ![](series-plot.png)

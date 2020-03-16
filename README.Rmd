@@ -95,13 +95,13 @@ str(calendar)
 ```
 
 
-```{r, fig.width=6, fig.height=3.5}
+```{r, message = FALSE, warning=FALSE, fig.width=6, fig.height=3.5}
 # plot one of the series with date
 library(ggplot2)
 library(xts)
 library(magrittr)
 xts(M5[[1]]$x, order.by = calendar$date[1:M5[[1]]$n]) %>% 
-   autoplot() + xlab("Time")
+   autoplot() + xlab("Time") + ylab("Sales")
 ```
 
 
