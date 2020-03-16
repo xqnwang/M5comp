@@ -95,7 +95,7 @@ str(calendar)
 ```
 
 
-```{r, fig.width=6, fig.height=3.5}
+```{r, message = FALSE, warning=FALSE, fig.width=6, fig.height=3.5}
 # plot one of the series with date
 library(ggplot2)
 library(xts)
