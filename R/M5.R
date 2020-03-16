@@ -1,6 +1,6 @@
 #' M5 Competition data
 #'
-#' The time series from the M5 competition. 
+#' The time series dataset from the M5 competition. 
 #' Calendar information can be seen in \code{\link{calendar}}.
 #'
 #' @rdname M5
@@ -12,7 +12,7 @@
 #' @format M5 is a list of 42840 series, 
 #' including 30490 bottom-level time series and 12350 aggregated time series.
 #' 
-#' 1. Each series of bottom-level within \code{M5} is an object with the following structure:
+#' 1. Each series of bottom-level within \code{M5} is a list object with the following structure:
 #' \describe{
 #'   \item{id}{The id of the product of the store. 
 #'   For example "HOBBIES_1_001_CA_1" denotes the product "HOBBIES_1_001" in the store "CA_1".}
@@ -39,9 +39,9 @@
 #'   \code{NA} means no price provided.}
 #' }
 #' 
-#' 2. Each series of aggregated level within \code{M5} does not include \code{id} and price elements. 
+#' 2. Each series of the aggregated level within \code{M5} does not include \code{id} and price elements. 
 #' \code{item.id}, \code{dept.id}, \code{cat.id}, \code{store.id}, and \code{state.id} are included 
-#' if the aggregate series contains these information. Besides, Each series of aggregated level contains 
+#' if the aggregated series contains these information. Besides, Each series of the aggregated level contains 
 #' the following element:
 #' \describe{
 #'   \item{agg.by}{A named character vector. 
@@ -51,16 +51,17 @@
 #' @note The training data ranges from 2011-01-29 to 2016-04-24. 
 #' Both validation and test datasets contain 28-day sales data. 
 #' The prices are constant at weekly basis. Besides, the \code{level} 
-#' information is introduced in 
-#' \href{https://mk0mcompetitiont8ake.kinstacdn.com/wp-content/uploads/2020/02/M5-Competitors-Guide_Final-1.pdf}{M5 Competitors’ Guide}.
+#' information is introduced in M5 Competitors’ Guide <https://mk0mcompetitiont8ake.kinstacdn.com/wp-content/uploads/2020/02/M5-Competitors-Guide_Final-1.pdf>.
+#' 
+#' @seealso  [calendar()] for the M5 calendar information.
 #' 
 #' @keywords datasets
 #'
 #' @references
-#' \href{https://mofc.unic.ac.cy/m5-competition/}{M5 Competition Web}
-#' \href{https://mk0mcompetitiont8ake.kinstacdn.com/wp-content/uploads/2020/02/M5-Competitors-Guide_Final-1.pdf}{M5 Competitors’ Guide}  
+#' M5 Competition Web <https://mofc.unic.ac.cy/m5-competition/>
+#' M5 Competitors’ Guide <https://mk0mcompetitiont8ake.kinstacdn.com/wp-content/uploads/2020/02/M5-Competitors-Guide_Final-1.pdfhttps://mk0mcompetitiont8ake.kinstacdn.com/wp-content/uploads/2020/02/M5-Competitors-Guide_Final-1.pdf>  
 #' 
-#' @source \href{https://www.kaggle.com/c/m5-forecasting-accuracy}{M5 Competition Dataset}
+#' @source M5 Competition Dataset <https://www.kaggle.com/c/m5-forecasting-accuracy>
 #'
 #' @examples
 #' data(M5)
