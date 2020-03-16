@@ -266,9 +266,8 @@ library(xts)
 #> 
 #>     as.Date, as.Date.numeric
 library(magrittr)
-ts <- M5[[1]]
-xts(ts$x, order.by = calendar$date[1:ts$n]) %>% 
-   autoplot() + ggtitle("Time series plot") + xlab("Time")
+xts(M5[[1]]$x, order.by = calendar$date[1:M5[[1]]$n]) %>% 
+   autoplot() + xlab("Time")
 ```
 
 ![](series-plot.png)
