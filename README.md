@@ -192,18 +192,38 @@ The `M5` is a list of 42840 series, including 30490 bottom-level time series and
 library(M5comp)
 data(M5)
 M5_bottom <- Filter(function(l) l$level == 12, M5)
-# the components of the bottom-level series
-names(M5_bottom[[1]])
-#>  [1] "id"        "level"     "item.id"   "dept.id"   "cat.id"   
-#>  [6] "store.id"  "state.id"  "n"         "h"         "x"        
-#> [11] "x.price"   "xx.price"  "xxx.price"
+# the structure of the bottom-level series
+str(M5_bottom[[1]])
+#> List of 13
+#>  $ id       : chr "HOBBIES_1_001_CA_1"
+#>  $ level    : num 12
+#>  $ item.id  : chr "HOBBIES_1_001"
+#>  $ dept.id  : chr "HOBBIES_1"
+#>  $ cat.id   : chr "HOBBIES"
+#>  $ store.id : chr "CA_1"
+#>  $ state.id : chr "CA"
+#>  $ n        : int 1913
+#>  $ h        : num 28
+#>  $ x        : Time-Series [1:1913] from 1 to 1913: 0 0 0 0 0 0 0 0 0 0 ...
+#>  $ x.price  : num [1:1913] NA NA NA NA NA NA NA NA NA NA ...
+#>  $ xx.price : num [1:28] 8.38 8.38 8.38 8.38 8.38 8.38 8.38 8.38 8.38 8.38 ...
+#>  $ xxx.price: num [1:28] 8.38 8.38 8.38 8.38 8.38 8.38 8.38 8.38 8.38 8.38 ...
 
 # extract extract level 9 series
 M5_l9 <- Filter(function(l) l$level == 9, M5)
-# the components of the aggregated series
-names(M5_l9[[1]])
-#> [1] "level"    "agg.by"   "dept.id"  "cat.id"   "store.id" "state.id"
-#> [7] "n"        "h"        "x"
+# the structure of the aggregated series
+str(M5_l9[[1]])
+#> List of 9
+#>  $ level   : num 9
+#>  $ agg.by  : Named chr [1:2] "FOODS_1" "CA_1"
+#>   ..- attr(*, "names")= chr [1:2] "dept.id" "store.id"
+#>  $ dept.id : chr "FOODS_1"
+#>  $ cat.id  : chr "FOODS"
+#>  $ store.id: chr "CA_1"
+#>  $ state.id: chr "CA"
+#>  $ n       : int 1913
+#>  $ h       : num 28
+#>  $ x       : Time-Series [1:1913] from 1 to 1913: 297 284 214 175 182 191 224 263 245 176 ...
 # which levels the series is aggregated on
 M5_l9[[1]]$agg.by
 #>   dept.id  store.id 
@@ -251,7 +271,7 @@ xts(ts$x, order.by = calendar$date[1:ts$n]) %>%
    autoplot() + ggtitle("Time series plot") + xlab("Time")
 ```
 
-![](README-unnamed-chunk-4-1.png)
+![](series-plot.png)
 
 ``` r
 # help pages

@@ -73,13 +73,13 @@ The `M5` is a list of $42840$ series, including $30490$ bottom-level time series
 library(M5comp)
 data(M5)
 M5_bottom <- Filter(function(l) l$level == 12, M5)
-# the components of the bottom-level series
-names(M5_bottom[[1]])
+# the structure of the bottom-level series
+str(M5_bottom[[1]])
 
 # extract extract level 9 series
 M5_l9 <- Filter(function(l) l$level == 9, M5)
-# the components of the aggregated series
-names(M5_l9[[1]])
+# the structure of the aggregated series
+str(M5_l9[[1]])
 # which levels the series is aggregated on
 M5_l9[[1]]$agg.by
 ```
