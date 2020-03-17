@@ -36,147 +36,22 @@ Aggregation
 
 **The following table shows more simply and clearly how the aggregated time series are generated. For example, series of level 11 are aggregated by series with the same `item.id` and `state.id`.**
 
-<table style="width:100%;">
-<colgroup>
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center">Level id</th>
-<th align="center">id</th>
-<th align="center">item.id</th>
-<th align="center">dept.id</th>
-<th align="center">cat.id</th>
-<th align="center">store.id</th>
-<th align="center">state.id</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">(example)</td>
-<td align="center">(HOBBIES_1_001_CA_1)</td>
-<td align="center">(HOBBIES_1_001)</td>
-<td align="center">(HOBBIES_1)</td>
-<td align="center">(HOBBIES)</td>
-<td align="center">(CA_1)</td>
-<td align="center">(CA)</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>1</strong></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>2</strong></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"><span class="math inline">✓</span></td>
-</tr>
-<tr class="even">
-<td align="center"><strong>3</strong></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"><span class="math inline">✓</span></td>
-<td align="center"></td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>4</strong></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"><span class="math inline">✓</span></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr class="even">
-<td align="center"><strong>5</strong></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"><span class="math inline">✓</span></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>6</strong></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"><span class="math inline">✓</span></td>
-<td align="center"></td>
-<td align="center"><span class="math inline">✓</span></td>
-</tr>
-<tr class="even">
-<td align="center"><strong>7</strong></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"><span class="math inline">✓</span></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"><span class="math inline">✓</span></td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>8</strong></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"><span class="math inline">✓</span></td>
-<td align="center"><span class="math inline">✓</span></td>
-<td align="center"></td>
-</tr>
-<tr class="even">
-<td align="center"><strong>9</strong></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"><span class="math inline">✓</span></td>
-<td align="center"></td>
-<td align="center"><span class="math inline">✓</span></td>
-<td align="center"></td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>10</strong></td>
-<td align="center"></td>
-<td align="center"><span class="math inline">✓</span></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr class="even">
-<td align="center"><strong>11</strong></td>
-<td align="center"></td>
-<td align="center"><span class="math inline">✓</span></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"><span class="math inline">✓</span></td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>12</strong></td>
-<td align="center"><span class="math inline">✓</span></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</tbody>
-</table>
+|Level id|id|item.id|dept.id|cat.id|store.id|state.id|
+|--- |--- |--- |--- |--- |--- |--- |
+|(example)|(HOBBIES_1_001_CA_1)|(HOBBIES_1_001)|(HOBBIES_1)|(HOBBIES)|(CA_1)|(CA)|
+|1|||||||
+|2||||||✓|
+|3|||||✓||
+|4||||✓|||
+|5|||✓||||
+|6||||✓||✓|
+|7|||✓|||✓|
+|8||||✓|✓||
+|9|||✓||✓||
+|10||✓|||||
+|11||✓||||✓|
+|12|✓||||||
+
 
 Example
 -------
